@@ -1,0 +1,119 @@
+// out: shoot.css, compress: true
+
+#container {
+  width:2048px;
+  height:1536px;
+  position: relative;
+}
+
+.front-bg {
+  background-image:url(../img/front-bg.png);
+  height: 1536px;
+  position: absolute;
+  width: 2048px;
+  z-index: 3;
+}
+
+.sky {
+  background-image:url(../img/bg.jpg);
+  height: 1536px;
+  position: absolute;
+  width: 2048px;
+  z-index: 1;
+}
+
+#duck {
+  width:232px;
+  height:208px;
+  position: absolute;
+  left:50%;
+  z-index: 2;
+  top:65%;
+  background-image:url(../img/duck-fly.gif);
+  -webkit-animation: duck 15s linear infinite;
+          animation: duck 15s linear infinite;
+}
+
+#aim {
+  width:352px;
+  height:352px;
+  background-image:url(../img/target.png);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+  opacity:1;
+}
+
+#aim.aim-active {
+  opacity: 0;
+}
+
+#black.active {
+  background-color:rgba(0, 0, 0, .7);
+  height: 1536px;
+  width: inherit;
+  position: absolute;
+  z-index: 999;
+}
+
+#dog {
+  width:270px;
+  height:380px;
+  position: absolute;
+  z-index: 2;
+  left:50%;
+  top:75%;
+  background-image:url(../img/dog-mockin.gif);
+}
+
+#dog.mockin {
+  -webkit-animation: dog 2s linear infinite;
+          animation: dog 2s linear infinite;
+}
+
+#clicker {
+  position:absolute;
+  height:inherit;
+  width:inherit;
+  z-index: 10;
+}
+
+@-webkit-keyframes duck {
+	0% {left:50%;top:65%;-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  12.4% {-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  12.5% {left:85%;top:35%;-webkit-transform: rotateY(180deg);transform: rotateY(180deg);}
+  25% {left:72.5%;top:5%}
+  50% {left:22.5%;top:65%}
+  62.4% {-webkit-transform: rotateY(180deg);transform: rotateY(180deg);}
+  62.5% {left:5%;top:35%;-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  75% {left:22.5%;top:5%;}
+	100% {left:50%;top:65%;}
+}
+
+
+@keyframes duck {
+	0% {left:50%;top:65%;-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  12.4% {-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  12.5% {left:85%;top:35%;-webkit-transform: rotateY(180deg);transform: rotateY(180deg);}
+  25% {left:72.5%;top:5%}
+  50% {left:22.5%;top:65%}
+  62.4% {-webkit-transform: rotateY(180deg);transform: rotateY(180deg);}
+  62.5% {left:5%;top:35%;-webkit-transform: rotateY(0deg);transform: rotateY(0deg);}
+  75% {left:22.5%;top:5%;}
+	100% {left:50%;top:65%;}
+}
+
+@-webkit-keyframes dog {
+  0% {top:75%;}
+  25% {top:50%;}
+  75% {top:50%;}
+  100% {top:75%}
+}
+
+@keyframes dog {
+  0% {top:75%;}
+  25% {top:50%;}
+  75% {top:50%;}
+  100% {top:75%}
+}

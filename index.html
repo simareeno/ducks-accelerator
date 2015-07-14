@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shooting test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="libs/styles/normalize.min.css">
+  <link rel="stylesheet" href="libs/styles/shoot.css">
+
+</head>
+<body>
+
+  <div id="warning"></div>
+  <div id="container">
+    <div id="clicker"></div>
+    <div id="black"></div>
+    <div class="front-bg"></div>
+    <div id="duck" class="container__duck"></div>
+    <div id="aim"></div>
+    <div id="dog"></div>
+    <div class="sky"></div>
+  </div>
+
+<script>
+  $( '#clicker' ).on('click', function(){
+     $( '#black' ).addClass( "active" );
+     $( '#dog' ).addClass( "mockin" );
+     $( '#aim' ).addClass( "aim-active" );
+     $( '#clicker' ).hide();
+     setTimeout(function() {
+            $('#black').removeClass('active');
+     },200);
+     setTimeout(function () {
+       $('#aim').removeClass('aim-active');
+       $('#dog').removeClass('mockin');
+       $( '#clicker' ).show();
+     }, 2000);
+  });
+</script>
+
+<script src="libs/scripts/aim.js" charset="utf-8"></script>
+
+</body>
+</html>
