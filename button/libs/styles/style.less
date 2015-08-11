@@ -1,0 +1,108 @@
+#container {
+	width:800px;
+	height:250px;
+	position: relative;
+	box-sizing: border-box;
+	background-color:#10b3ff;
+	padding:50px
+}
+
+.button	{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.text {
+	position: absolute;
+	background-image: url(img/free-duck.png);
+	width: 452px;
+	height: 32px;
+	z-index: 2;
+	top: 48px;
+	left: 100px;
+}
+
+.line {
+	height: 8px;
+	width: 100%;
+	background-color: #c8c8c8;
+	position: relative;
+	overflow: hidden;
+
+	&:after {
+		content:'';
+		background-color:#fecc2f;
+		position: absolute;
+		height:8px;
+		box-shadow: inset -8px 0 0 0 #feda46;
+		left:-240px;
+		animation-timing-function: linear
+	}
+}
+
+.second-line {
+box-shadow: inset -8px 0 0 0 #dedede;
+
+	&:after {
+		box-shadow: inset -8px 0 0 0 #feda46, inset 8px 0 0 #ffdb32;
+	}
+}
+
+.prelast-line {
+box-shadow: inset -8px 0 0 0 #a0a0a0;
+
+	&:after {
+		box-shadow: inset -8px 0 0 0 #feda46, inset 8px 0 0 #ddb100;
+	}
+}
+
+.first-line,
+.last-line {
+    margin: 0 8px;
+}
+
+.first-line {
+	background-color:#dedede;
+
+	&:after {
+		background-color:#ffdb32;
+	}
+}
+
+.last-line {
+	background-color:#a0a0a0;
+
+	&:after {
+		background-color:#ddb100;
+		box-shadow:none;
+	}
+}
+
+
+@duration: 1.5s;
+@name: pure-fill;
+
+
+.fill-28:after {
+  animation: @name @duration steps(28 , end) forwards;
+	width:224px;
+}
+
+
+.fill-29:after {
+  animation: @name @duration steps(29, end) forwards;
+	width:232px;
+}
+
+
+.fill-30:after {
+  animation: @name @duration steps(30, end) forwards;
+	width:240px;
+}
+
+@keyframes pure-fill {
+  to {
+    left: 0;
+  }
+}

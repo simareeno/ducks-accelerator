@@ -1,0 +1,134 @@
+#container {
+	width:2048px;
+	height:1536px;
+	position: relative;
+	background: url(img/bg.png) no-repeat;
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+#top {
+	opacity: 0;
+	transition: opacity .3s;
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+
+#prizes {
+	display:flex;
+	justify-content:space-between;
+}
+
+#ur-prizes {
+	text-align: center;
+	margin-top: 150px;
+}
+
+#know-what {
+	text-align: center;
+	margin: 50px 0 100px;
+	opacity: 1;
+	transition: opacity .3s;
+
+	&.active {
+		opacity: 0;
+	}
+}
+
+#buy-button {
+	text-align: center;
+	display: none;
+	opacity: 0;
+
+	&.active {
+		display: block;
+		opacity: 1;
+	}
+}
+
+#urcode {
+	text-align: center;
+	margin-top: 50px;
+	opacity: 0;
+	transition: opacity .3s;
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-around;
+    width: 1500px;
+    margin: 150px auto 0;}
+
+#code-button {
+	opacity: 0;
+	display: none;
+	transition: opacity .3s;
+
+	&.active {
+		opacity: 1;
+		display: block;
+	}
+}
+
+.prize {
+	perspective: 1800;
+	position: relative;
+	width: 440px;
+	height: 472px;
+
+	&.hover .flipper {
+		transform: rotateY(180deg);
+	}
+}
+
+/*
+.prize {
+	perspective: 1800;
+	position: relative;
+	width: 440px;
+	height: 472px;
+
+	&.hover .flipper {
+		animation: woooow .5s linear both;
+	}
+}
+*/
+
+.front, .back {
+	width:440px ;
+	height:472px ;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateX(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+.flipper {
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/*
+@keyframes woooow {
+  0% {transform:scale(1) rotateY(0deg) translate(0,0);}
+  50% {transform:scale(1.2) rotateY(90deg) translate(0,-50px);}
+  100% {transform:scale(1) rotateY(180deg) translate(0,0);}
+}
+*/

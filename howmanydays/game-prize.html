@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Shooting test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="normalize.min.css">
+	<link rel="stylesheet" href="shoot.css">
+
+</head>
+<body>
+
+<div id="warning"></div>
+<div id="container">
+	<div id="top"><img src="img/top.png" alt=""></div>
+	<div id="ur-prizes"><img src="img/ur-prizes.png" alt=""></div>
+	<div id="know-what"><img src="img/know-what.png" alt=""></div>
+
+	<div id="prizes">
+		<div class="clear-prize prize">
+			<div class="flipper">
+				<div class="front"><img src="img/dogprize.png" alt=""></div>
+				<div class="back"><img src="img/clear-prize.png" alt=""></div>
+			</div>
+		</div>
+
+		<div class="clear-2-prize prize">
+			<div class="flipper">
+				<div class="front"><img src="img/dogprize.png" alt=""></div>
+				<div class="back"><img src="img/clear-2-prize.png" alt=""></div>
+			</div>
+		</div>
+
+		<div class="big-prize prize">
+			<div class="flipper">
+				<div class="front"><img src="img/dogprize.png" alt=""></div>
+				<div class="back"><img src="img/clear-prize.png" alt=""></div>
+			</div>
+		</div>
+
+		<div class="game-prize prize">
+			<div class="flipper">
+				<div class="front"><img src="img/dogprize.png" alt=""></div>
+				<div class="back"><img src="img/game-prize.png" alt=""></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="buttons">
+		<div id="buy-button" class="button"><img src="img/buy-button.png" alt=""></div>
+		<div id="code-button"  class="button"><img src="img/code-button.png" alt=""></div>
+	</div>
+	<div id="urcode"><img src="img/urcode.png" alt=""></div>
+</div>
+
+<script>
+
+	$( '.big-prize' ).on('click', function(){
+		 $(this).addClass( "hover" );
+		 checkAll();
+	});
+
+	$( '.clear-2-prize' ).on('click', function(){
+		 $(this).addClass( "hover" );
+		 checkAll();
+	});
+
+	$( '.clear-prize' ).on('click', function(){
+		 $(this).addClass( "hover" );
+		 checkAll();
+	});
+
+	$( '.game-prize' ).on('click', function(){
+		 $(this).addClass( "hover" );
+		 $( '#urcode').addClass( 'active');
+		 $( '#code-button').addClass( 'active' );
+		 checkAll();
+	});
+
+
+	function checkAll() {
+
+		var hoverClass = 'hover';
+
+		if ( $('.clear-prize').hasClass(hoverClass) && $('.game-prize').hasClass(hoverClass) && $('.big-prize').hasClass(hoverClass) && $('.clear-2-prize').hasClass(hoverClass) ) {
+			$(' #buy-button ').addClass('active');
+			$(' #know-what ').addClass('active');
+			$(' #urcode ').addClass('active');
+			$(' #top ').addClass('active');
+		} else {
+			$(' #buy-button ').removeClass('active');
+			$(' #know-what ').removeClass('active');
+			$(' #top ').removeClass('active');
+		}
+	}
+
+</script>
+
+</body>
+</html>
