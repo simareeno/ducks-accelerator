@@ -80,29 +80,49 @@ box-shadow: inset -8px 0 0 0 #a0a0a0;
 }
 
 
-@duration: 1.5s;
-@name: pure-fill;
+@duration: 2.5s;
 
 
 .fill-28:after {
-  animation: @name @duration steps(28 , end) forwards;
+  animation: pure-fill-28 @duration steps(28 , end) forwards;
 	width:224px;
 }
 
 
 .fill-29:after {
-  animation: @name @duration steps(29, end) forwards;
+  animation: pure-fill-29 @duration steps(29, end) forwards;
 	width:232px;
 }
 
 
 .fill-30:after {
-  animation: @name @duration steps(30, end) forwards;
+  animation: pure-fill-30 @duration steps(30, end) forwards;
 	width:240px;
 }
 
-@keyframes pure-fill {
-  to {
-    left: 0;
-  }
+@keyframes pure-fill-28 {
+  0% {left:-240px}
+	20% {left:-210px}
+	40% {left:-164px}
+	60% {left:-96px}
+	80% {left:-48px}
+	100% {left: 0px;}
+}
+
+@keyframes pure-fill-29 {
+  0% {left:-240px}
+	20% {left:-192px}
+	40% {left:-154px}
+	60% {left:-90px}
+	80% {left:-48px}
+	100% {left: 0px;}
+}
+
+@keyframes pure-fill-30 {
+  0% {left:-240px}
+	20% {left:-192px}
+	40% {left:-144px}
+	60% {left:-96px}
+	80% {left:-34px}
+	100% {left: 0px;}
 }
